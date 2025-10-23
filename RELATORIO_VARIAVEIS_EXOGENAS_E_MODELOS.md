@@ -1,15 +1,15 @@
-# 📊 RELATÓRIO TÉCNICO - VARIÁVEIS EXÓGENAS E MODELOS
+#  RELATÓRIO TÉCNICO - VARIÁVEIS EXÓGENAS E MODELOS
 ## Projeto de Forecasting TJGO
 
 ---
 
-## 🎯 Resumo Executivo
+##  Resumo Executivo
 
 Este relatório detalha o tratamento e configuração das variáveis exógenas, bem como a implementação e parametrização dos modelos de machine learning utilizados no projeto de forecasting do TJGO. A análise revelou que **variáveis exógenas econômicas tradicionais** são mais eficazes que variáveis de alta correlação, e que **modelos mais simples superam abordagens complexas**.
 
 ---
 
-## 📈 1. VARIÁVEIS EXÓGENAS
+##  1. VARIÁVEIS EXÓGENAS
 
 ### 1.1 Definição e Conceito
 
@@ -145,7 +145,7 @@ def configure_sarimax_exog(train_data, test_data, exog_vars):
     for var in exog_vars:
         adf_stat, adf_pvalue = adfuller(train_data[var])
         if adf_pvalue > 0.05:
-            print(f"⚠️ {var} não é estacionária (p-value: {adf_pvalue:.3f})")
+            print(f" {var} não é estacionária (p-value: {adf_pvalue:.3f})")
             # Aplicar diferenciação se necessário
             train_data[f'{var}_diff'] = train_data[var].diff()
     
@@ -183,7 +183,7 @@ def configure_prophet_exog(train_data, exog_vars):
     for var in exog_vars:
         if var in prophet_data.columns:
             model.add_regressor(var)
-            print(f"✅ Adicionada variável exógena: {var}")
+            print(f" Adicionada variável exógena: {var}")
     
     return model, prophet_data
 ```
@@ -276,7 +276,7 @@ def analyze_multicollinearity(df, exog_vars):
 
 ---
 
-## 🤖 2. MODELOS DE MACHINE LEARNING
+##  2. MODELOS DE MACHINE LEARNING
 
 ### 2.1 Baselines (Modelos de Referência)
 
@@ -668,7 +668,7 @@ def walk_forward_validation(model, X, y, train_size=0.8):
 
 ---
 
-## 🎯 3. CONFIGURAÇÃO FINAL E RESULTADOS
+##  3. CONFIGURAÇÃO FINAL E RESULTADOS
 
 ### 3.1 Configuração Vencedora
 
@@ -733,7 +733,7 @@ for var in final_exog_vars:
 
 ---
 
-## 📊 4. RECOMENDAÇÕES TÉCNICAS
+##  4. RECOMENDAÇÕES TÉCNICAS
 
 ### 4.1 Implementação em Produção
 
@@ -799,7 +799,7 @@ def monitor_model_performance():
 
 ---
 
-## 🎯 5. CONCLUSÕES
+##  5. CONCLUSÕES
 
 ### 5.1 Descobertas Principais
 
