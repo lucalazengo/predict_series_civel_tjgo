@@ -1,10 +1,10 @@
-# 📊 RELATÓRIO TÉCNICO FINAL - PROJETO DE FORECASTING TJGO
+# RELATÓRIO TÉCNICO FINAL - PROJETO DE FORECASTING TJGO
 
-## 🎯 Resumo Executivo
+## Resumo Executivo
 
 Este relatório apresenta os resultados finais do projeto de previsão de casos no Tribunal de Justiça de Goiás (TJGO), desenvolvido seguindo a metodologia CRISP-DM. O projeto demonstrou que **modelos mais simples e focados podem superar abordagens complexas**, com o Prophet alcançando MAE de 3.634 casos (44% melhor que o modelo completo).
 
-### 🏆 Principais Descobertas
+### Principais Descobertas
 
 1. **Modelo Vencedor**: Prophet com dados 2015+ e variáveis econômicas tradicionais
 2. **Performance**: MAE = 3.634 casos, R² = 0.339 (excelente ajuste)
@@ -13,7 +13,7 @@ Este relatório apresenta os resultados finais do projeto de previsão de casos 
 
 ---
 
-## 📋 1. Entendimento do Negócio
+## 1. Entendimento do Negócio
 
 ### 1.1 Objetivo do Projeto
 Desenvolver um sistema de previsão de casos para o TJGO que permita:
@@ -33,7 +33,7 @@ Desenvolver um sistema de previsão de casos para o TJGO que permita:
 
 ---
 
-## 🔍 2. Entendimento dos Dados (EDA)
+## 2. Entendimento dos Dados (EDA)
 
 ### 2.1 Fonte dos Dados
 - **Período**: Janeiro 2014 - Dezembro 2024
@@ -72,7 +72,7 @@ Máximo: 78.456 casos (dez/2022)
 
 ---
 
-## ⚙️ 3. Preparação dos Dados
+## 3. Preparação dos Dados
 
 ### 3.1 Estratégia de Limpeza
 1. **Tratamento de Missing Values**: Forward-fill para preservar dados históricos
@@ -98,7 +98,7 @@ Máximo: 78.456 casos (dez/2022)
 
 ---
 
-## 🤖 4. Modelagem
+##  4. Modelagem
 
 ### 4.1 Algoritmos Testados
 
@@ -146,7 +146,7 @@ Prophet(
 
 ---
 
-## 📊 5. Avaliação dos Modelos
+## 5. Avaliação dos Modelos
 
 ### 5.1 Comparação de Performance
 
@@ -185,7 +185,7 @@ Comparação estatística entre Prophet e outros modelos:
 
 ---
 
-## 🔮 6. Previsões Futuras
+##  6. Previsões Futuras
 
 ### 6.1 Previsões para 2025
 
@@ -226,7 +226,7 @@ Comparação estatística entre Prophet e outros modelos:
 
 ---
 
-## 🎯 7. Interpretação dos Resultados
+## 7. Interpretação dos Resultados
 
 ### 7.1 Por que o Modelo Simples Funcionou Melhor?
 
@@ -270,7 +270,7 @@ Variáveis econômicas tradicionais atuam como regularizadores naturais:
 
 ---
 
-## 🚀 8. Recomendações Estratégicas
+##  8. Recomendações Estratégicas
 
 ### 8.1 Implementação Imediata
 
@@ -318,7 +318,7 @@ def monitor_forecast_accuracy():
 
 ---
 
-## 📈 9. Impacto Esperado
+##  9. Impacto Esperado
 
 ### 9.1 Benefícios Quantitativos
 
@@ -346,7 +346,7 @@ def monitor_forecast_accuracy():
 
 ---
 
-## 🔧 10. Aspectos Técnicos
+##  10. Aspectos Técnicos
 
 ### 10.1 Arquitetura do Sistema
 
@@ -444,7 +444,7 @@ def check_model_health():
 
 ---
 
-## 📚 11. Conclusões e Próximos Passos
+##  11. Conclusões e Próximos Passos
 
 ### 11.1 Principais Aprendizados
 
@@ -494,7 +494,7 @@ def check_model_health():
 
 ---
 
-## 📊 12. Anexos
+##  12. Anexos
 
 ### 12.1 Código Fonte
 - **Repositório**: `/src/` - Scripts de preparação e modelagem
@@ -514,7 +514,7 @@ def check_model_health():
 
 ---
 
-## 🎯 Resumo Final
+##  Resumo Final
 
 Este projeto demonstrou que **forecasting judicial é viável e valioso**, com o Prophet alcançando performance excepcional (MAE = 3.634). A descoberta mais importante foi que **modelos mais simples superaram abordagens complexas**, validando o princípio da parcimônia.
 
