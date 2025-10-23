@@ -1,0 +1,21 @@
+artifact_path: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/models/m-8ae1d85781274b04bf4e135ca14f959d/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.pkl
+    lgb_version: 4.6.0
+    model_class: lightgbm.sklearn.LGBMRegressor
+  python_function:
+    data: model.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.11.9
+mlflow_version: 3.5.1
+model_id: m-8ae1d85781274b04bf4e135ca14f959d
+model_size_bytes: 55601
+model_uuid: m-8ae1d85781274b04bf4e135ca14f959d
+prompts: null
+run_id: 5baab2f56d864b54a7903584de4ec866
+utc_time_created: '2025-10-23 07:02:14.201129'

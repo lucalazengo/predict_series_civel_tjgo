@@ -1,0 +1,10 @@
+artifact_location: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/models/m-8ae1d85781274b04bf4e135ca14f959d/artifacts
+creation_timestamp: 1761202934139
+experiment_id: '643466050220203177'
+last_updated_timestamp: 1761202951738
+model_id: m-8ae1d85781274b04bf4e135ca14f959d
+model_type: null
+name: model
+source_run_id: 5baab2f56d864b54a7903584de4ec866
+status: 2
+status_message: null

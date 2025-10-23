@@ -1,0 +1,22 @@
+artifact_path: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/models/m-b584e0892d074f138b4861279f67c0e3/artifacts
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.11.9
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: xgb
+    xgb_version: 3.1.1
+mlflow_version: 3.5.1
+model_id: m-b584e0892d074f138b4861279f67c0e3
+model_size_bytes: 195018
+model_uuid: m-b584e0892d074f138b4861279f67c0e3
+prompts: null
+run_id: 2e1b3b65b34f4b209da16d189009aed3
+utc_time_created: '2025-10-23 06:33:49.891955'

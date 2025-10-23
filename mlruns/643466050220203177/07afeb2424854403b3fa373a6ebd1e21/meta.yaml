@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/07afeb2424854403b3fa373a6ebd1e21/artifacts
+end_time: 1761201241441
+entry_point_name: ''
+experiment_id: '643466050220203177'
+lifecycle_stage: active
+run_id: 07afeb2424854403b3fa373a6ebd1e21
+run_name: lightgbm
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761201235999
+status: 3
+tags: []
+user_id: universo369

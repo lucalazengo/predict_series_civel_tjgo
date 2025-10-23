@@ -1,0 +1,22 @@
+artifact_path: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/models/m-44c4b38d63034e4bb3d89307e8994823/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.5.1
+model_id: m-44c4b38d63034e4bb3d89307e8994823
+model_size_bytes: 958603
+model_uuid: m-44c4b38d63034e4bb3d89307e8994823
+prompts: null
+run_id: d44528ca388d4ce0b0a11435b9b91fc6
+utc_time_created: '2025-10-23 07:01:39.975602'

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/universo369/Documents/RESIDENCIA%20EM%20TI%20-%20TJGO%20%2B%20TJGO/TJGO/predict_series_civel_tjgo/mlruns/643466050220203177/993844afb59d40f8a9087c09ecfbc9d7/artifacts
+end_time: 1761201223064
+entry_point_name: ''
+experiment_id: '643466050220203177'
+lifecycle_stage: active
+run_id: 993844afb59d40f8a9087c09ecfbc9d7
+run_name: sarimax
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761201223023
+status: 3
+tags: []
+user_id: universo369
