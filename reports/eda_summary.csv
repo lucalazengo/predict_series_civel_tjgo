@@ -1,0 +1,14 @@
+Métrica,Valor
+Período_Análise,2014-01 a 2024-12
+Total_Observações,132
+Dados_Faltantes,0
+Outliers_Target,0
+Média_Target,40147.87
+Desvio_Padrão_Target,13932.64
+Skewness_Target,-0.285
+Kurtosis_Target,-0.962
+Série_Estacionária,Não
+Força_Sazonalidade,0.05
+Força_Tendência,0.709
+Melhor_Corr_Exógena,QT_ELEITOR: 0.785
+VIF_Máximo,2005.0

@@ -1,0 +1,7 @@
+.venv_tjgo/
+venv_tjgo/
+data/processed/
+data/raw/
+# Adicionar a regra para ignorar CSVs
+echo "*.csv" >> .gitignore
+echo "notebook/data/processed/*.csv" >> .gitignore
