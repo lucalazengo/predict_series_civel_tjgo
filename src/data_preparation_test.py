@@ -13,7 +13,7 @@ import os
 
 def main():
     print("Starting TEST data preparation...")
-    print("🔬 TEST CONFIGURATION:")
+    print(" TEST CONFIGURATION:")
     print("  - Excluding 2014 data")
     print("  - Removing qt_acidente and QT_ELEITOR")
     print("  - Using only traditional economic variables")

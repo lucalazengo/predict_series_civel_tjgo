@@ -1,10 +1,8 @@
-# Análise de Correlação - Descobertas Importantes
+# Análise de Correlação
 
 ## **Descoberta Principal**
 
-Você identificou corretamente que existem variáveis com **correlações muito mais fortes** com `TOTAL_CASOS` que não foram utilizadas inicialmente nos modelos.
-
-## **Comparação de Correlações**
+**Comparação de Correlações**
 
 ### **Variáveis Originalmente Usadas (Correlações Fracas)**
 
@@ -41,41 +39,12 @@ Você identificou corretamente que existem variáveis com **correlações muito 
 - Precisamos prever valores futuros das variáveis exógenas
 - Algumas podem ser difíceis de prever com precisão
 
-## **Ações Implementadas**
-
-### **1. Atualização do Notebook EDA**
+## **1. Notebook EDA**
 
 - Adicionada análise específica de variáveis de alta correlação
 - Análise de multicolinearidade entre essas variáveis
 - Avaliação de causalidade e interpretabilidade
 - Recomendações de inclusão
-
-### **2. Atualização dos Scripts**
-
-- **data_preparation.py**: Incluídas variáveis de alta correlação
-- **train_models.py**: SARIMAX e Prophet agora usam essas variáveis
-- **Cross-correlation**: Análise expandida para incluir todas as variáveis
-
-### **3. Lista Atualizada de Variáveis Exógenas**
-
-```python
-exogenous_vars = [
-    'TAXA_SELIC',      # -0.23 (econômica tradicional)
-    'IPCA',            # -0.28 (econômica tradicional)  
-    'TAXA_DESOCUPACAO', # 0.07 (econômica tradicional)
-    'INADIMPLENCIA',   # -0.03 (econômica tradicional)
-    'qt_acidente',     # -0.81 (ALTA CORRELAÇÃO)
-    'QT_ELEITOR'       # 0.79 (ALTA CORRELAÇÃO)
-]
-```
-
-## **Impacto Esperado**
-
-### **Melhoria na Performance dos Modelos**
-
-- **SARIMAX**: Deve melhorar significativamente com variáveis de alta correlação
-- **Prophet**: Regressores exógenos mais informativos
-- **Modelos de ML**: Features mais relevantes
 
 ### **Monitoramento Necessário**
 
@@ -83,9 +52,9 @@ exogenous_vars = [
 - **Cross-correlation**: Análise de defasagens
 - **Causalidade**: Interpretação dos resultados
 
-## **Recomendações Finais**
+## **Recomendações** 
 
-### **1. Incluir Imediatamente**
+### **1. Incluir**
 
 - **qt_acidente**: Alta correlação negativa (-0.81) e causalidade plausível
 - **QT_ELEITOR**: Alta correlação positiva (0.79) e fácil previsão
@@ -93,12 +62,12 @@ exogenous_vars = [
 ### **2. Avaliar Cuidadosamente**
 
 - **VAREJO_RESTRITO/AMPLIADO**: Boa correlação mas alta multicolinearidade
--  **Escolher apenas uma** das variáveis de varejo
+- **Escolher apenas uma** das variáveis de varejo
 
 ### **3. Manter**
 
 - **Variáveis econômicas tradicionais**: Para contexto macroeconômico
--  **Monitoramento**: VIF e análise de multicolinearidade
+- **Monitoramento**: VIF e análise de multicolinearidade
 
 ## 🔬 **Próximos Passos**
 

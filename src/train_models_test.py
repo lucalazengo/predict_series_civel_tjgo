@@ -564,7 +564,7 @@ def main():
     models = ForecastingModelsTest(train_data, test_data)
     
     # Treinar todos os modelos
-    print("\n🔄 Treinando modelos...")
+    print("\n Treinando modelos...")
     
     # Baselines
     models.baseline_persistence()
