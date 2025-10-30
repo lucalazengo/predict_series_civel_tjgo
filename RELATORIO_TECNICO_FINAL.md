@@ -394,9 +394,9 @@ def monitor_forecast_accuracy():
 - **Comunicação proativa** sobre demandas futuras
 
 ---
-
-## 10. Aspectos Técnicos
-
+```
+## 10. Arquitetura e Tecnologia
+```
 ### 10.1 Arquitetura do Sistema
 
 #### 10.1.1 Componentes
@@ -499,7 +499,7 @@ def check_model_health():
 
 ---
 
-## 11. Conclusões e Próximos Passos
+## 11. Lições Aprendidas e Próximos Passos
 
 ### 11.1 Principais Aprendizados
 
@@ -556,7 +556,11 @@ def check_model_health():
 
 ---
 
+<<<<<<< HEAD
 ## 12. Anexos
+=======
+##  12. Anexos
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 ### 12.1 Código Fonte
 

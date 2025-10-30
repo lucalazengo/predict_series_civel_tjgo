@@ -5,14 +5,12 @@ Este projeto implementa um sistema de previsão de casos para o Tribunal de Just
 ## Resumo Executivo
 
 ### Principais Resultados
-
 - **Modelo Vencedor**: Prophet (dados 2015+, variáveis econômicas tradicionais)
 - **Performance**: MAE = 3.634 casos, R² = 0.339 (excelente ajuste)
 - **Insight Crítico**: Menos variáveis = melhor performance (princípio da parcimônia)
 - **Previsão 2025**: Média de 58.887 casos/mês com tendência de diminuição
 
 ### Descoberta Surpreendente
-
 O **modelo teste** (sem dados 2014 + sem variáveis de alta correlação) teve **44% melhor performance** que o modelo completo, demonstrando que:
 
 - **Simplicidade vence complexidade**
@@ -22,7 +20,6 @@ O **modelo teste** (sem dados 2014 + sem variáveis de alta correlação) teve *
 ## Dados e Metodologia
 
 ### Fonte dos Dados
-
 - **Período**: Janeiro 2014 - Dezembro 2024 (132 meses)
 - **Frequência**: Mensal
 - **Variável Alvo**: `TOTAL_CASOS` (casos novos por mês)
@@ -112,7 +109,11 @@ python src/forecast_future.py
 | LightGBM                  | 7.464           | 8.876           | -1.464          | ❌                   |
 | SARIMAX                   | 9.416           | 11.290          | -2.986          | ❌                   |
 
+<<<<<<< HEAD
 ### Previsões para 2025
+=======
+###  Previsões para 2025
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 | Mês               | Previsão        | Limite Inferior  | Limite Superior  |
 | ------------------ | ---------------- | ---------------- | ---------------- |
@@ -129,7 +130,11 @@ python src/forecast_future.py
 - **Vale**: Dezembro (53.908 casos)
 - **Tendência**: Diminuição de 2.537 casos ao longo do ano
 
+<<<<<<< HEAD
 ## Principais Descobertas
+=======
+##  Principais Descobertas
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 ### 1. **Princípio da Parcimônia**
 
@@ -154,28 +159,46 @@ python src/forecast_future.py
 - **TAXA_DESOCUPACAO**: Taxa de desemprego
 - **INADIMPLENCIA**: Taxa de inadimplência
 
+<<<<<<< HEAD
 ## Arquivos Gerados
 
 ### Relatórios e Métricas
 
+=======
+##  Arquivos Gerados
+
+###  Relatórios e Métricas
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 - `reports/metrics.csv` - Métricas modelo completo
 - `reports_test/metrics_test.csv` - Métricas modelo teste (RECOMENDADO)
 - `reports_test/forecast_results.csv` - Previsões futuras detalhadas
 
+<<<<<<< HEAD
 ### Visualizações
 
+=======
+###  Visualizações
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 - `reports/predictions_comparison.png` - Comparação modelo completo
 - `reports_test/predictions_comparison_test.png` - Comparação modelo teste
 - `reports_test/forecast_future.png` - Previsões futuras com intervalos de confiança
 
+<<<<<<< HEAD
 ### Documentação
 
+=======
+###  Documentação
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 - `RELATORIO_TECNICO_FINAL.md` - Relatório técnico completo
 - `ANALISE_CORRELACAO.md` - Análise de correlações
 - `EXECUTIVE_SUMMARY.md` - Resumo executivo
 - `CHECKLIST.md` - Lista de progresso
 
+<<<<<<< HEAD
 ## Tecnologias Utilizadas
+=======
+##  Tecnologias Utilizadas
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 - **Python 3.11** - Linguagem principal
 - **Pandas, NumPy** - Manipulação de dados
@@ -186,7 +209,11 @@ python src/forecast_future.py
 - **Statsmodels** - Modelos estatísticos (SARIMAX)
 - **Jupyter** - Análise exploratória
 
+<<<<<<< HEAD
 ## Metodologia CRISP-DM
+=======
+##  Metodologia CRISP-DM
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 1. **Business Understanding** ✅ - Entendimento do negócio TJGO
 2. **Data Understanding** ✅ - EDA completo com 1.892 linhas de análise
@@ -195,33 +222,51 @@ python src/forecast_future.py
 5. **Evaluation** ✅ - Métricas rigorosas, testes estatísticos
 6. **Deployment** ✅ - Código modular, documentação completa
 
+<<<<<<< HEAD
 ## Recomendações de Implementação
 
 ### Implementação Imediata
 
+=======
+##  Recomendações de Implementação
+
+###  Implementação Imediata
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 1. **Usar modelo Prophet** (dados 2015+, 4 variáveis econômicas)
 2. **Retreinar mensalmente** com novos dados
 3. **Monitorar performance** com alertas automáticos
 4. **Dashboard executivo** com KPIs principais
 
+<<<<<<< HEAD
 ### Expansão Futura
 
+=======
+###  Expansão Futura
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 1. **Outros tipos de processo** (criminal, família, etc.)
 2. **Previsão por comarca** (geográfica)
 3. **Outros tribunais** (metodologia replicável)
 4. **AutoML** para otimização automática
 
+<<<<<<< HEAD
 ## Lições Aprendidas
 
 ### Sucessos
+=======
+##  Lições Aprendidas
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 
 - **Simplicidade vence complexidade**
 - **Dados de qualidade > Quantidade**
 - **Validação temporal é crucial**
 - **Feature engineering é fundamental**
 
+<<<<<<< HEAD
 ### Cuidados
 
+=======
+###  Cuidados
+>>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
 - **Overfitting** com muitas variáveis
 - **Multicolineariedade** entre features
 - **Drift de dados** ao longo do tempo

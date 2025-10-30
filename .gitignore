@@ -1,7 +1,16 @@
+# Virtual environments
+.venv/
+venv/
 .venv_tjgo/
 venv_tjgo/
-data/processed/
+
+# Data directories not to version
 data/raw/
-# Adicionar a regra para ignorar CSVs
-echo "*.csv" >> .gitignore
-echo "notebook/data/processed/*.csv" >> .gitignore
+data/processed/
+
+# Jupyter checkpoints
+**/.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db

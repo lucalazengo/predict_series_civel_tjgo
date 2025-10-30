@@ -1,5 +1,4 @@
 # RELATÓRIO TÉCNICO - VARIÁVEIS EXÓGENAS E MODELOS
-
 ## Projeto de Forecasting TJGO
 
 ---
@@ -156,7 +155,7 @@ def configure_sarimax_exog(train_data, test_data, exog_vars):
     for var in exog_vars:
         adf_stat, adf_pvalue = adfuller(train_data[var])
         if adf_pvalue > 0.05:
-            print(f"⚠️ {var} não é estacionária (p-value: {adf_pvalue:.3f})")
+            print(f" {var} não é estacionária (p-value: {adf_pvalue:.3f})")
             # Aplicar diferenciação se necessário
             train_data[f'{var}_diff'] = train_data[var].diff()
   
@@ -196,8 +195,9 @@ def configure_prophet_exog(train_data, exog_vars):
     for var in exog_vars:
         if var in prophet_data.columns:
             model.add_regressor(var)
-            print(f"✅ Adicionada variável exógena: {var}")
-  
+print(f" Adicionada variável exógena: {var}")
+    
+    return model, prophet_data
     return model, prophet_data
 ```
 
