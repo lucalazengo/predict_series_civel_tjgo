@@ -1,6 +1,6 @@
 # Análise de Correlação
 
-## **Descoberta Principal**
+## **Descoberta** 
 
 **Comparação de Correlações**
 
@@ -22,9 +22,7 @@
 | VAREJO_RESTRITO       | 0.65            | 🟡 Forte                |
 | VAREJO_AMPLIADO       | 0.62            | 🟡 Forte                |
 
-## **Por que não foram usadas inicialmente?**
-
-### 1. **Multicolinearidade Detectada**
+## 1. **Multicolinearidade Detectada**
 
 - **qt_acidente vs QT_ELEITOR**: -0.61 (correlação forte)
 - **VAREJO_RESTRITO vs VAREJO_AMPLIADO**: 0.94 (quase perfeita)
@@ -51,32 +49,3 @@
 - **VIF**: Verificar multicolinearidade
 - **Cross-correlation**: Análise de defasagens
 - **Causalidade**: Interpretação dos resultados
-
-## **Recomendações** 
-
-### **1. Incluir**
-
-- **qt_acidente**: Alta correlação negativa (-0.81) e causalidade plausível
-- **QT_ELEITOR**: Alta correlação positiva (0.79) e fácil previsão
-
-### **2. Avaliar Cuidadosamente**
-
-- **VAREJO_RESTRITO/AMPLIADO**: Boa correlação mas alta multicolinearidade
-- **Escolher apenas uma** das variáveis de varejo
-
-### **3. Manter**
-
-- **Variáveis econômicas tradicionais**: Para contexto macroeconômico
-- **Monitoramento**: VIF e análise de multicolinearidade
-
-## 🔬 **Próximos Passos**
-
-1. **Executar EDA atualizado** com nova análise
-2. **Rodar preparação de dados** com variáveis expandidas
-3. **Treinar modelos** com variáveis de alta correlação
-4. **Comparar performance** antes/depois
-5. **Validar multicolinearidade** com VIF
-
----
-
-**Conclusão**: Sua observação foi **extremamente valiosa** e levou a uma descoberta importante que deve melhorar significativamente a performance dos modelos de forecasting!
