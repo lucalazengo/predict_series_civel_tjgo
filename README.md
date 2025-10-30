@@ -1,289 +1,242 @@
-# Projeto de Forecasting - Casos TJGO
+# Forecasting Project - TJGO Cases
 
-Este projeto implementa um sistema de previsão de casos para o Tribunal de Justiça de Goiás (TJGO) seguindo a metodologia CRISP-DM. **Descoberta principal**: Modelos mais simples superaram abordagens complexas, com Prophet alcançando MAE de 3.634 casos.
+This project implements a case forecasting system for the Court of Justice of Goiás (TJGO) following the CRISP-DM methodology. **Key finding**: Simpler models outperformed complex approaches, with Prophet achieving an MAE of 3,634 cases.
 
-## Resumo Executivo
+## Executive Summary
 
-### Principais Resultados
-- **Modelo Vencedor**: Prophet (dados 2015+, variáveis econômicas tradicionais)
-- **Performance**: MAE = 3.634 casos, R² = 0.339 (excelente ajuste)
-- **Insight Crítico**: Menos variáveis = melhor performance (princípio da parcimônia)
-- **Previsão 2025**: Média de 58.887 casos/mês com tendência de diminuição
+### Key Results
 
-### Descoberta Surpreendente
-O **modelo teste** (sem dados 2014 + sem variáveis de alta correlação) teve **44% melhor performance** que o modelo completo, demonstrando que:
+- **Winning Model**: Prophet (data from 2015+, traditional economic variables)
+- **Performance**: MAE = 3,634 cases, R² = 0.339 (excellent fit)
+- **Critical Insight**: Fewer variables = better performance (principle of parsimony)
+- **2025 Forecast**: Average of 58,887 cases/month with a downward trend
 
-- **Simplicidade vence complexidade**
-- **4 variáveis bem escolhidas > 15 variáveis**
-- **Dados de qualidade > Quantidade**
+### Surprising Discovery
 
-## Dados e Metodologia
+The **test model** (excluding 2014 data + excluding highly correlated variables) achieved **44% better performance** than the full model, demonstrating that:
 
-### Fonte dos Dados
-- **Período**: Janeiro 2014 - Dezembro 2024 (132 meses)
-- **Frequência**: Mensal
-- **Variável Alvo**: `TOTAL_CASOS` (casos novos por mês)
-- **Variáveis Exógenas**: 15 indicadores econômicos e sociais
+- **Simplicity beats complexity**
+- **4 well-chosen variables > 15 variables**
+- **Data quality > Quantity**
 
-### Métricas de Sucesso
+## Data and Methodology
 
-- **MAE < 5.000 casos** (erro médio aceitável) ✅ **3.634 casos**
-- **R² > 0.3** (explicação de pelo menos 30% da variância) ✅ **0.339**
-- **Reprodutibilidade** (código modular e documentado) ✅
+### Data Sources
 
-## Estrutura do Projeto
+- **Period**: January 2014 – December 2024 (132 months)
+- **Frequency**: Monthly
+- **Target Variable**: `TOTAL_CASOS` (new cases per month)
+- **Exogenous Variables**: 15 economic and social indicators
+
+### Success Metrics
+
+- **MAE < 5,000 cases** (acceptable average error) ✅ **3,634 cases**
+- **R² > 0.3** (explains at least 30% of variance) ✅ **0.339**
+- **Reproducibility** (modular and documented code) ✅
+
+## Project Structure
 
 ```
 predict_series_civel_tjgo/
 ├── data/
-│   ├── raw/                    # Dados originais
-│   ├── processed/              # Dados processados (modelo completo)
-│   └── processed_test/         # Dados processados (modelo teste)
+│   ├── raw/                    # Raw data
+│   ├── processed/              # Processed data (full model)
+│   └── processed_test/         # Processed data (test model)
 ├── notebooks/                  # Jupyter notebooks
-├── src/                        # Código fonte
-│   ├── data_preparation.py    # Preparação completa
-│   ├── data_preparation_test.py # Preparação teste
-│   ├── train_models.py        # Treinamento completo
-│   ├── train_models_test.py   # Treinamento teste
-│   └── forecast_future.py    # Previsões futuras
-├── reports/                    # Relatórios modelo completo
-├── reports_test/              # Relatórios modelo teste
-├── requirements.txt            # Dependências
-├── RELATORIO_TECNICO_FINAL.md # Relatório técnico completo
-└── README.md                   # Este arquivo
+├── src/                        # Source code
+│   ├── data_preparation.py    # Full data preparation
+│   ├── data_preparation_test.py # Test data preparation
+│   ├── train_models.py        # Full model training
+│   ├── train_models_test.py   # Test model training
+│   └── forecast_future.py    # Future forecasts
+├── reports/                    # Full model reports
+├── reports_test/              # Test model reports
+├── requirements.txt            # Dependencies
+├── RELATORIO_TECNICO_FINAL.md # Full technical report
+└── README.md                   # This file
 ```
 
-## Instalação e Execução
+## Installation and Execution
 
-### 1. Configurar Ambiente Virtual
+### 1. Set Up Virtual Environment
 
 ```bash
-# Criar ambiente virtual
+# Create virtual environment
 python -m venv venv_tjgo
 
-# Ativar ambiente (Linux/Mac)
+# Activate environment (Linux/Mac)
 source venv_tjgo/bin/activate
 
-# Ativar ambiente (Windows)
+# Activate environment (Windows)
 venv_tjgo\Scripts\activate
 ```
 
-### 2. Instalar Dependências
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Executar Análise Completa
+### 3. Run Full Analysis
 
 ```bash
-# 1. Análise Exploratória de Dados
+# 1. Exploratory Data Analysis
 jupyter notebook notebooks/01_EDA.ipynb
 
-# 2. Preparação dos Dados (Modelo Completo)
+# 2. Data Preparation (Full Model)
 python src/data_preparation.py
 
-# 3. Preparação dos Dados (Modelo Teste - RECOMENDADO)
+# 3. Data Preparation (Test Model – RECOMMENDED)
 python src/data_preparation_test.py
 
-# 4. Treinamento dos Modelos (Modelo Completo)
+# 4. Model Training (Full Model)
 python src/train_models.py
 
-# 5. Treinamento dos Modelos (Modelo Teste - RECOMENDADO)
+# 5. Model Training (Test Model – RECOMMENDED)
 python src/train_models_test.py
 
-# 6. Previsões Futuras (Usando Melhor Modelo)
+# 6. Future Forecasts (Using Best Model)
 python src/forecast_future.py
 ```
 
-## Modelos Implementados e Resultados
+## Implemented Models and Results
 
-### Comparação de Performance
+### Performance Comparison
 
-| Modelo                    | MAE             | RMSE            | R²             | Status               |
-| ------------------------- | --------------- | --------------- | --------------- | -------------------- |
-| **Prophet (Teste)** | **3.634** | **4.597** | **0.339** | 🏆**VENCEDOR** |
-| Prophet (Completo)        | 6.472           | 7.313           | -0.245          | ❌ Overfitting       |
-| Random Forest             | 6.827           | 7.874           | -0.939          | ❌                   |
-| XGBoost                   | 7.669           | 8.918           | -1.487          | ❌                   |
-| LightGBM                  | 7.464           | 8.876           | -1.464          | ❌                   |
-| SARIMAX                   | 9.416           | 11.290          | -2.986          | ❌                   |
+| Model                    | MAE             | RMSE            | R²             | Status             |
+| ------------------------ | --------------- | --------------- | --------------- | ------------------ |
+| **Prophet (Test)** | **3,634** | **4,597** | **0.339** | 🏆**WINNER** |
+| Prophet (Full)           | 6,472           | 7,313           | -0.245          | ❌ Overfitting     |
+| Random Forest            | 6,827           | 7,874           | -0.939          | ❌                 |
+| XGBoost                  | 7,669           | 8,918           | -1.487          | ❌                 |
+| LightGBM                 | 7,464           | 8,876           | -1.464          | ❌                 |
+| SARIMAX                  | 9,416           | 11,290          | -2.986          | ❌                 |
 
-<<<<<<< HEAD
-### Previsões para 2025
-=======
-###  Previsões para 2025
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+### 2025 Forecasts
 
-| Mês               | Previsão        | Limite Inferior  | Limite Superior  |
+| Month              | Forecast         | Lower Bound      | Upper Bound      |
 | ------------------ | ---------------- | ---------------- | ---------------- |
-| Jan/2025           | 56.445           | 47.054           | 65.747           |
-| Fev/2025           | 54.613           | 46.148           | 63.639           |
-| Mar/2025           | 62.186           | 53.690           | 70.522           |
-| **Jul/2025** | **63.158** | **53.992** | **72.300** |
-| **Dez/2025** | **53.908** | **45.317** | **62.664** |
+| Jan/2025           | 56,445           | 47,054           | 65,747           |
+| Feb/2025           | 54,613           | 46,148           | 63,639           |
+| Mar/2025           | 62,186           | 53,690           | 70,522           |
+| **Jul/2025** | **63,158** | **53,992** | **72,300** |
+| **Dec/2025** | **53,908** | **45,317** | **62,664** |
 
 **Insights**:
 
-- **Média**: 58.887 casos/mês (+38.9% vs histórico)
-- **Pico**: Julho (63.158 casos)
-- **Vale**: Dezembro (53.908 casos)
-- **Tendência**: Diminuição de 2.537 casos ao longo do ano
+- **Average**: 58,887 cases/month (+38.9% vs historical average)
+- **Peak**: July (63,158 cases)
+- **Trough**: December (53,908 cases)
+- **Trend**: Decrease of 2,537 cases throughout the year
 
-<<<<<<< HEAD
-## Principais Descobertas
-=======
-##  Principais Descobertas
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+## Key Findings
 
-### 1. **Princípio da Parcimônia**
+### 1. **Principle of Parsimony**
 
-> "Entre duas explicações igualmente válidas, a mais simples é geralmente a correta"
+> "Among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected."
 
-**Aplicação**: Modelo com 4 variáveis econômicas tradicionais superou modelo com 15 variáveis.
+**Application**: The model with 4 traditional economic variables outperformed the model with 15 variables.
 
 ### 2. **Curse of Dimensionality**
 
-**Explicação Técnica**: Em espaços de alta dimensionalidade, todos os pontos ficam equidistantes, dificultando a aprendizagem.
+**Technical Explanation**: In high-dimensional spaces, all points become equidistant, making learning difficult.
 
-### 3. **Variáveis de Alta Correlação = Ruído**
+### 3. **Highly Correlated Variables = Noise**
 
-- `qt_acidente` e `QT_ELEITOR` tinham correlação 0.85+ com `TOTAL_CASOS`
-- **Mas diminuíram a performance** quando incluídas
-- **Causa**: Multicolineariedade e overfitting
+- `qt_acidente` and `QT_ELEITOR` showed correlations >0.85 with `TOTAL_CASOS`
+- **But reduced performance** when included
+- **Cause**: Multicollinearity and overfitting
 
-### 4. **Variáveis Econômicas Tradicionais São Suficientes**
+### 4. **Traditional Economic Variables Are Sufficient**
 
-- **TAXA_SELIC**: Taxa básica de juros
-- **IPCA**: Índice de preços ao consumidor
-- **TAXA_DESOCUPACAO**: Taxa de desemprego
-- **INADIMPLENCIA**: Taxa de inadimplência
+- **TAXA_SELIC**: Base interest rate
+- **IPCA**: Consumer price index
+- **TAXA_DESOCUPACAO**: Unemployment rate
+- **INADIMPLENCIA**: Default rate
 
-<<<<<<< HEAD
-## Arquivos Gerados
+## Generated Files
 
-### Relatórios e Métricas
+### Reports and Metrics
 
-=======
-##  Arquivos Gerados
+- `reports/metrics.csv` – Full model metrics
+- `reports_test/metrics_test.csv` – Test model metrics (**RECOMMENDED**)
+- `reports_test/forecast_results.csv` – Detailed future forecasts
 
-###  Relatórios e Métricas
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-- `reports/metrics.csv` - Métricas modelo completo
-- `reports_test/metrics_test.csv` - Métricas modelo teste (RECOMENDADO)
-- `reports_test/forecast_results.csv` - Previsões futuras detalhadas
+### Visualizations
 
-<<<<<<< HEAD
-### Visualizações
+- `reports/predictions_comparison.png` – Full model comparison
+- `reports_test/predictions_comparison_test.png` – Test model comparison
+- `reports_test/forecast_future.png` – Future forecasts with confidence intervals
 
-=======
-###  Visualizações
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-- `reports/predictions_comparison.png` - Comparação modelo completo
-- `reports_test/predictions_comparison_test.png` - Comparação modelo teste
-- `reports_test/forecast_future.png` - Previsões futuras com intervalos de confiança
+### Documentation
 
-<<<<<<< HEAD
-### Documentação
+- `RELATORIO_TECNICO_FINAL.md` – Full technical report
+- `ANALISE_CORRELACAO.md` – Correlation analysis
+- `EXECUTIVE_SUMMARY.md` – Executive summary
+- `CHECKLIST.md` – Progress checklist
 
-=======
-###  Documentação
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-- `RELATORIO_TECNICO_FINAL.md` - Relatório técnico completo
-- `ANALISE_CORRELACAO.md` - Análise de correlações
-- `EXECUTIVE_SUMMARY.md` - Resumo executivo
-- `CHECKLIST.md` - Lista de progresso
+## Technologies Used
 
-<<<<<<< HEAD
-## Tecnologias Utilizadas
-=======
-##  Tecnologias Utilizadas
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+- **Python 3.11** – Primary language
+- **Pandas, NumPy** – Data manipulation
+- **Matplotlib, Seaborn** – Visualizations
+- **Prophet** – Time series modeling (Facebook)
+- **Scikit-learn** – Machine learning
+- **XGBoost, LightGBM** – Gradient boosting
+- **Statsmodels** – Statistical models (SARIMAX)
+- **Jupyter** – Exploratory analysis
 
-- **Python 3.11** - Linguagem principal
-- **Pandas, NumPy** - Manipulação de dados
-- **Matplotlib, Seaborn** - Visualizações
-- **Prophet** - Modelagem de séries temporais (Facebook)
-- **Scikit-learn** - Machine learning
-- **XGBoost, LightGBM** - Gradient boosting
-- **Statsmodels** - Modelos estatísticos (SARIMAX)
-- **Jupyter** - Análise exploratória
+## CRISP-DM Methodology
 
-<<<<<<< HEAD
-## Metodologia CRISP-DM
-=======
-##  Metodologia CRISP-DM
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+1. **Business Understanding** ✅ – TJGO business context
+2. **Data Understanding** ✅ – Comprehensive EDA with 1,892 lines of analysis
+3. **Data Preparation** ✅ – Cleaning, feature engineering, experiments
+4. **Modeling** ✅ – 7 algorithms tested
+5. **Evaluation** ✅ – Rigorous metrics, statistical tests
+6. **Deployment** ✅ – Modular code, complete documentation
 
-1. **Business Understanding** ✅ - Entendimento do negócio TJGO
-2. **Data Understanding** ✅ - EDA completo com 1.892 linhas de análise
-3. **Data Preparation** ✅ - Limpeza, feature engineering, experimentos
-4. **Modeling** ✅ - 7 algoritmos testados
-5. **Evaluation** ✅ - Métricas rigorosas, testes estatísticos
-6. **Deployment** ✅ - Código modular, documentação completa
+## Implementation Recommendations
 
-<<<<<<< HEAD
-## Recomendações de Implementação
+### Immediate Implementation
 
-### Implementação Imediata
+1. **Deploy Prophet model** (2015+ data, 4 economic variables)
+2. **Retrain monthly** with new data
+3. **Monitor performance** with automated alerts
+4. **Build executive dashboard** with key KPIs
 
-=======
-##  Recomendações de Implementação
+### Future Expansion
 
-###  Implementação Imediata
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-1. **Usar modelo Prophet** (dados 2015+, 4 variáveis econômicas)
-2. **Retreinar mensalmente** com novos dados
-3. **Monitorar performance** com alertas automáticos
-4. **Dashboard executivo** com KPIs principais
+1. **Other case types** (criminal, family, etc.)
+2. **Forecast by jurisdiction** (geographic)
+3. **Other courts** (replicable methodology)
+4. **AutoML** for automated optimization
 
-<<<<<<< HEAD
-### Expansão Futura
+## Lessons Learned
 
-=======
-###  Expansão Futura
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-1. **Outros tipos de processo** (criminal, família, etc.)
-2. **Previsão por comarca** (geográfica)
-3. **Outros tribunais** (metodologia replicável)
-4. **AutoML** para otimização automática
+### Successes
 
-<<<<<<< HEAD
-## Lições Aprendidas
+- **Simplicity beats complexity**
+- **Data quality > Quantity**
+- **Temporal validation is crucial**
+- **Feature engineering is fundamental**
 
-### Sucessos
-=======
-##  Lições Aprendidas
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+### Cautions
 
-- **Simplicidade vence complexidade**
-- **Dados de qualidade > Quantidade**
-- **Validação temporal é crucial**
-- **Feature engineering é fundamental**
+- **Overfitting** with too many variables
+- **Multicollinearity** among features
+- **Data drift** over time
+- **Stakeholder expectation management**
 
-<<<<<<< HEAD
-### Cuidados
+## Team and Contact
 
-=======
-###  Cuidados
->>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
-- **Overfitting** com muitas variáveis
-- **Multicolineariedade** entre features
-- **Drift de dados** ao longo do tempo
-- **Gestão de expectativas** dos stakeholders
+- **Autor** - Eng. Manuel Lucala Zengo
+- **Mentorship** – UFG TI RESIDENCY
+- **Team** - DIACDE TJGO
+- **Methodology** – CRISP-DM adapted for time series
 
-## Equipe e Contato
+## Next Steps
 
-- **Data Science Team** - TJGO
-- **Mentoria** - Especialistas em MLOps
-- **Metodologia** - CRISP-DM adaptada para séries temporais
-
-## Próximos Passos
-
-1. **Revisar relatório técnico completo** (`RELATORIO_TECNICO_FINAL.md`)
-2. **Implementar sistema de monitoramento**
-3. **Criar dashboard executivo**
-4. **Treinar equipe técnica**
-5. **Estabelecer processo de atualização mensal**
-
----
+1. **Implement monitoring system**
+3. **Create executive dashboard**
+4. **Train technical team**
+5. **Establish monthly update process**

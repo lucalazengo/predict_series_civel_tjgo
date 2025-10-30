@@ -1,4 +1,4 @@
-# RELATÓRIO TÉCNICO FINAL - PROJETO DE FORECASTING TJGO
+# RELATÓRIO TÉCNICO FINAL - PROJETO DE FORECASTING AREA CIVEL
 
 ## Resumo Executivo
 
@@ -394,9 +394,11 @@ def monitor_forecast_accuracy():
 - **Comunicação proativa** sobre demandas futuras
 
 ---
+
 ```
 ## 10. Arquitetura e Tecnologia
 ```
+
 ### 10.1 Arquitetura do Sistema
 
 #### 10.1.1 Componentes
@@ -557,10 +559,20 @@ def check_model_health():
 ---
 
 <<<<<<< HEAD
+
 ## 12. Anexos
+
 =======
-##  12. Anexos
+
+## 12. Anexos
+
 >>>>>>> d139397b229b78a1ec78becfb2c890a52a07115c
+>>>>>>>
+>>>>>>
+>>>>>
+>>>>
+>>>
+>>
 
 ### 12.1 Código Fonte
 
